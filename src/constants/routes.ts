@@ -1,0 +1,23 @@
+export const ROUTES = {
+  HOME: '/',
+  BLOG: '/blog',
+  ABOUT: '/about',
+  AUTH: {
+    LOGIN: '/login',
+    REGISTER: '/register',
+    FORGOT_PASSWORD: '/forgot-password',
+  },
+  DASHBOARD: {
+    ROOT: '/dashboard',
+    POSTS: '/dashboard/posts',
+    PAGES: '/dashboard/pages',
+    CATEGORIES: '/dashboard/categories',
+    TAGS: '/dashboard/tags',
+    MEDIA: '/dashboard/media',
+    USERS: '/dashboard/users',
+    ROLES: '/dashboard/roles',
+    AUDIT_LOG: '/dashboard/audit-log',
+    SETTINGS: '/dashboard/settings',
+    SETTINGS_SEO: '/dashboard/settings/seo',
+  },
+} as const
