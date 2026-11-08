@@ -15,7 +15,7 @@ try {
 
   // 2. Generate TypeScript types otomatis
   console.log('🔄 2/2 Memperbarui file src/types/database.types.ts...');
-  const typesOutput = execSync('npx supabase gen types typescript --linked', {
+  const typesOutput = execSync('npx supabase gen types typescript --linked --schema public,private', {
     cwd: path.resolve(__dirname, '..'),
     encoding: 'utf8',
   });

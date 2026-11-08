@@ -1,9 +1,15 @@
+import { Suspense } from 'react'
+import { LoginForm } from '@/features/auth/components'
+
+export const metadata = {
+  title: 'Masuk | My CMS',
+  description: 'Masuk ke dashboard akun My CMS',
+}
+
 export default function LoginPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-2">Masuk ke Akun</h1>
-      <p className="text-sm text-muted-foreground mb-6">Masukkan kredensial Anda untuk melanjutkan</p>
-      {/* LoginForm component goes here */}
-    </div>
+    <Suspense fallback={<div className="p-8 text-center text-sm text-muted-foreground">Memuat form login...</div>}>
+      <LoginForm />
+    </Suspense>
   )
 }

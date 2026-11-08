@@ -1,5 +1,7 @@
--- 0007: Audit Log
-CREATE TABLE IF NOT EXISTS public.audit_logs (
+-- 0007: Audit Log (Stored in private schema)
+CREATE SCHEMA IF NOT EXISTS private;
+
+CREATE TABLE IF NOT EXISTS private.audit_logs (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE SET NULL,
   action TEXT NOT NULL,

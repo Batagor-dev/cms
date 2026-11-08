@@ -30,7 +30,22 @@ Map every task to its corresponding skill in `.agents/skills/`:
 1. **Identify the Scope**: Before writing code, identify which domain(s) the task touches.
 2. **Read the Skill(s)**: Inspect the relevant `.agents/skills/<skill-name>/SKILL.md` (and its reference files if needed).
 3. **Follow Patterns Faithfully**: Implement the code adhering strictly to the patterns, rules, and constraints found in the skill.
-4. **Cross-Check**: Verify against security (`owasp-security`) and accessibility (`web-design-guidelines`) before concluding the task.
+4. **Follow Frontend Rules**: Always check and use standard primitives defined in [FRONTEND_RULES.md](file:///c:/laragon/www/cms/FRONTEND_RULES.md) (`@/components/ui` for `Card`, `Input`, `PasswordInput`, `OtpInput`, `Button`, `Label`, `Alert`).
+5. **Cross-Check**: Verify against security (`owasp-security`) and accessibility (`web-design-guidelines`) before concluding the task.
+
+---
+
+## 🗄️ MANDATORY RULE: Database & Migrations (Edit Existing Migrations Only)
+
+**DILARANG MENAMBAH FILE MIGRATION BARU SAAT MEMPERBAIKI ATAU MENGUBAH SKEMA YANG SUDAH ADA.**
+
+1. **Edit Existing Migrations**:
+   - Ketika ada perubahan tabel, kolom, constraint, fungsi, trigger, atau RLS, **SELALU edit file migration yang sudah ada** di `supabase/migrations/` (misalnya `0001_profiles_and_roles.sql`, `0009_email_otp_verification.sql`, dsb).
+   - **JANGAN** membuat file migrasi bertumpuk/inkremental baru (seperti `0010_...`, `0011_...`, dll.) kecuali secara eksplisit diminta untuk membuat modul fitur tabel baru dari nol.
+2. **Jaga Kebersihan Schema**:
+   - File migrasi harus tetap bersih, modular, dan menjadi *single source of truth*.
+3. **Sinkronisasi**:
+   - Setelah mengedit file migrasi yang bersangkutan, jalankan eksekusi query ke database Supabase dan perbarui tipe data TypeScript via `npm run db:types`.
 
 ---
 

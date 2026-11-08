@@ -7,5 +7,6 @@ CREATE TABLE IF NOT EXISTS public.media (
   size_bytes BIGINT,
   alt_text TEXT,
   uploaded_by UUID REFERENCES public.profiles(id) ON DELETE SET NULL,
+  deleted_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );

@@ -16,7 +16,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
       </header>
       <main className="flex-1 max-w-6xl mx-auto w-full p-6">{children}</main>
       <footer className="border-t py-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} My CMS. All rights reserved.
+        © 2026 My CMS. All rights reserved.
       </footer>
     </div>
   )
