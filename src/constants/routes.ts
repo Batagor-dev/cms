@@ -16,6 +16,8 @@ export const ROUTES = {
     MEDIA: '/dashboard/media',
     USERS: '/dashboard/users',
     ROLES: '/dashboard/roles',
+    NOTIFICATIONS: '/dashboard/notifications',
+    COMPONENTS: '/dashboard/components',
     AUDIT_LOG: '/dashboard/audit-log',
     SETTINGS: '/dashboard/settings',
     SETTINGS_SEO: '/dashboard/settings/seo',

@@ -11,8 +11,10 @@ export const dashboardNav = [
   { title: 'Categories', href: '/dashboard/categories', icon: 'Folder' },
   { title: 'Tags', href: '/dashboard/tags', icon: 'Tag' },
   { title: 'Media', href: '/dashboard/media', icon: 'Image' },
+  { title: 'Notifications', href: '/dashboard/notifications', icon: 'Bell' },
   { title: 'Users', href: '/dashboard/users', icon: 'Users' },
   { title: 'Roles', href: '/dashboard/roles', icon: 'Shield' },
   { title: 'Audit Log', href: '/dashboard/audit-log', icon: 'History' },
+  { title: 'UI Components', href: '/dashboard/components', icon: 'Layers' },
   { title: 'Settings', href: '/dashboard/settings', icon: 'Settings' },
 ]
