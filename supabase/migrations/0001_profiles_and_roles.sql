@@ -20,7 +20,7 @@ GRANT ALL ON ALL ROUTINES IN SCHEMA private TO postgres, service_role;
 CREATE TABLE IF NOT EXISTS public.profiles (
   id UUID REFERENCES auth.users(id) ON DELETE CASCADE PRIMARY KEY,
   full_name TEXT,
-  avatar_url TEXT,
+  avatar_url TEXT DEFAULT '/images/avatars/1.png',
   bio TEXT,
   banned_at TIMESTAMPTZ,
   banned_until TIMESTAMPTZ,
@@ -175,11 +175,11 @@ BEGIN
   VALUES (
     NEW.id,
     COALESCE(NEW.raw_user_meta_data->>'full_name', NEW.email),
-    NEW.raw_user_meta_data->>'avatar_url'
+    COALESCE(NEW.raw_user_meta_data->>'avatar_url', '/images/avatars/1.png')
   )
   ON CONFLICT (id) DO UPDATE SET
     full_name = COALESCE(EXCLUDED.full_name, public.profiles.full_name),
-    avatar_url = COALESCE(EXCLUDED.avatar_url, public.profiles.avatar_url),
+    avatar_url = COALESCE(EXCLUDED.avatar_url, public.profiles.avatar_url, '/images/avatars/1.png'),
     updated_at = NOW();
 
   -- Tentukan role default (prioritas: meta_data > email check > default 'viewer')

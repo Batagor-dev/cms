@@ -203,11 +203,11 @@ BEGIN
   VALUES (
     NEW.id,
     COALESCE(NEW.raw_user_meta_data->>'full_name', NEW.email),
-    NEW.raw_user_meta_data->>'avatar_url'
+    COALESCE(NEW.raw_user_meta_data->>'avatar_url', '/images/avatars/1.png')
   )
   ON CONFLICT (id) DO UPDATE SET
     full_name = COALESCE(EXCLUDED.full_name, public.profiles.full_name),
-    avatar_url = COALESCE(EXCLUDED.avatar_url, public.profiles.avatar_url),
+    avatar_url = COALESCE(EXCLUDED.avatar_url, public.profiles.avatar_url, '/images/avatars/1.png'),
     updated_at = NOW();
 
   requested_role_slug := COALESCE(NEW.raw_user_meta_data->>'role', 'viewer');
