@@ -30,7 +30,7 @@ Map every task to its corresponding skill in `.agents/skills/`:
 1. **Identify the Scope**: Before writing code, identify which domain(s) the task touches.
 2. **Read the Skill(s)**: Inspect the relevant `.agents/skills/<skill-name>/SKILL.md` (and its reference files if needed).
 3. **Follow Patterns Faithfully**: Implement the code adhering strictly to the patterns, rules, and constraints found in the skill.
-4. **Follow Frontend Rules**: Always check and use standard primitives defined in [FRONTEND_RULES.md](file:///c:/laragon/www/cms/FRONTEND_RULES.md) (`@/components/ui` for `Card`, `Input`, `PasswordInput`, `OtpInput`, `Button`, `Label`, `Alert`).
+4. **Follow Frontend Rules**: Always check and strictly follow all standards in [FRONTEND_RULES.md](file:///c:/laragon/www/cms/FRONTEND_RULES.md) (reuse `@/components/ui` primitives such as `Card`, `Input`, `PasswordInput`, `OtpInput`, `Button`, `Label`, `Alert`, `Checkbox`, `Select2`, `MultiSelect2`, `DataTable`, `Breadcrumb`, `FileUpload`, `ThemeToggle`; enforce Dark & Light Mode parity; enforce desktop/tablet/mobile responsiveness; enforce 60fps GPU-composited Next.js animations via `motion` `LazyMotion`/`domAnimation` or CSS without `transition-all` or `width`/`height` animations; and enforce CMS typography rules with `Inter` + `JetBrains Mono` via `next/font/google`, strict `text-xs`–`text-3xl` scale with `12px` floor and `16px` mobile inputs, weights `400–700`, `tabular-nums`, semantic heading hierarchy, and WCAG AA contrast).
 5. **Cross-Check**: Verify against security (`owasp-security`) and accessibility (`web-design-guidelines`) before concluding the task.
 
 ---
