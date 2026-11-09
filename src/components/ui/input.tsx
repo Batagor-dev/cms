@@ -22,7 +22,7 @@ export function Input({
     return (
       <div className="relative flex items-center w-full">
         {leftIcon && (
-          <div className="absolute inset-y-0 left-3 text-muted-foreground pointer-events-none flex items-center justify-center [&_svg]:size-4">
+          <div className="absolute inset-y-0 left-3 text-muted-foreground pointer-events-none flex items-center justify-center [&_svg]:size-4.5">
             {leftIcon}
           </div>
         )}
@@ -32,7 +32,7 @@ export function Input({
           ref={ref}
           aria-invalid={isError ? 'true' : undefined}
           className={cn(
-            'flex h-10 w-full rounded-md border border-input bg-background py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
+            'flex h-10 w-full rounded-md border border-input bg-background py-2 text-base sm:text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
             leftIcon ? 'pl-10' : 'px-3',
             rightIcon ? 'pr-10' : 'px-3',
             isError && 'border-destructive focus-visible:ring-destructive/50 text-destructive',
@@ -41,7 +41,7 @@ export function Input({
           {...props}
         />
         {rightIcon && (
-          <div className="absolute inset-y-0 right-3 text-muted-foreground flex items-center justify-center [&_svg]:size-4">
+          <div className="absolute inset-y-0 right-3 text-muted-foreground flex items-center justify-center [&_svg]:size-4.5">
             {rightIcon}
           </div>
         )}
@@ -56,7 +56,7 @@ export function Input({
       ref={ref}
       aria-invalid={isError ? 'true' : undefined}
       className={cn(
-        'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
+        'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base sm:text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
         isError && 'border-destructive focus-visible:ring-destructive/50 text-destructive',
         className
       )}

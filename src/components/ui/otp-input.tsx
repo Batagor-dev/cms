@@ -103,11 +103,11 @@ export function OtpInput({
           onKeyDown={(e) => handleKeyDown(index, e)}
           onPaste={handlePaste}
           className={cn(
-            'size-11 sm:size-12 rounded-lg border border-input bg-background text-center text-lg font-bold shadow-xs transition-all',
+            'size-11 sm:size-12 rounded-lg border border-input bg-background text-foreground text-center text-lg font-bold shadow-xs transition-[border-color,background-color,scale] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] focus:scale-[1.02] motion-reduce:transition-none motion-reduce:scale-100',
             'focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none',
             'disabled:cursor-not-allowed disabled:opacity-50',
             isError && 'border-destructive text-destructive focus:border-destructive focus:ring-destructive/20',
-            digits[index] && !isError && 'border-primary/60 bg-primary/5'
+            digits[index] && !isError && 'border-primary/60 bg-primary/5 dark:bg-primary/10'
           )}
         />
       ))}

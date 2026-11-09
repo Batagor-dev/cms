@@ -13,7 +13,7 @@ export interface PasswordInputProps extends Omit<InputProps, 'type' | 'rightIcon
 export function PasswordInput({
   className,
   showIcon = true,
-  leftIcon = <Lock className="size-4" />,
+  leftIcon = <Lock className="size-4.5" />,
   ref,
   ...props
 }: PasswordInputProps) {
@@ -30,17 +30,17 @@ export function PasswordInput({
             tabIndex={-1}
             onClick={() => setShowPassword((prev) => !prev)}
             aria-label={showPassword ? 'Sembunyikan sandi' : 'Tampilkan sandi'}
-            className="size-8 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors cursor-pointer z-20 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="size-9 flex items-center justify-center text-slate-500 dark:text-zinc-400 [@media(hover:hover)_and_(pointer:fine)]:hover:text-slate-700 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-100 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-slate-100 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-zinc-800 active:bg-slate-200 dark:active:bg-zinc-700 transition-colors cursor-pointer z-20 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {showPassword ? (
-              <FaEyeSlash className="size-4 text-slate-700" aria-hidden="true" />
+              <FaEyeSlash className="size-4.5 text-slate-700 dark:text-zinc-200" aria-hidden="true" />
             ) : (
-              <FaEye className="size-4 text-slate-400" aria-hidden="true" />
+              <FaEye className="size-4.5 text-slate-500 dark:text-zinc-400" aria-hidden="true" />
             )}
           </button>
         }
         ref={ref}
-        className={cn('pr-11 [&::-ms-reveal]:hidden [&::-ms-clear]:hidden', className)}
+        className={cn('pr-12 [&::-ms-reveal]:hidden [&::-ms-clear]:hidden', className)}
         {...props}
       />
     </div>

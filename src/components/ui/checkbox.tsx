@@ -35,7 +35,7 @@ export function Checkbox({
   }
 
   return (
-    <span className="relative inline-flex items-center justify-center size-4 shrink-0">
+    <span className="relative inline-flex items-center justify-center size-4.5 shrink-0">
       <input
         type="checkbox"
         id={id}
@@ -49,16 +49,21 @@ export function Checkbox({
       <span
         aria-hidden="true"
         className={cn(
-          'size-4 rounded-[4px] border flex items-center justify-center transition-all cursor-pointer select-none',
+          'size-4.5 rounded-[4px] border flex items-center justify-center transition-[background-color,border-color,scale] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none cursor-pointer select-none',
           isChecked
-            ? 'bg-slate-950 border-slate-950 text-white'
-            : 'bg-white border-slate-300 hover:border-slate-400',
-          'peer-focus-visible:ring-2 peer-focus-visible:ring-slate-900 peer-focus-visible:ring-offset-1',
+            ? 'bg-slate-950 border-slate-950 text-white dark:bg-white dark:border-white dark:text-zinc-950'
+            : 'bg-white dark:bg-zinc-900 border-slate-300 dark:border-zinc-700 [@media(hover:hover)_and_(pointer:fine)]:hover:border-slate-400 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:border-zinc-500',
+          'peer-focus-visible:ring-2 peer-focus-visible:ring-slate-900 dark:peer-focus-visible:ring-white/30 peer-focus-visible:ring-offset-1 dark:peer-focus-visible:ring-offset-zinc-950',
           disabled && 'opacity-50 cursor-not-allowed',
           className
         )}
       >
-        {isChecked && <FaCheck className="size-2.5 text-white stroke-[1]" />}
+        <FaCheck
+          className={cn(
+            'size-3 text-current stroke-[1] transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none',
+            isChecked ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+          )}
+        />
       </span>
     </span>
   )
