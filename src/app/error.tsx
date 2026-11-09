@@ -15,11 +15,16 @@ export default function Error({
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-4 text-center">
-      <h2 className="text-2xl font-bold mb-2">Terjadi Kesalahan!</h2>
-      <p className="text-muted-foreground mb-4">{error.message || 'Gagal memuat halaman.'}</p>
+      <h1 className="text-2xl font-semibold tracking-tight leading-tight mb-2">
+        Terjadi Kesalahan!
+      </h1>
+      <p className="text-sm text-muted-foreground leading-normal max-w-prose mb-6">
+        {error.message || 'Gagal memuat halaman.'}
+      </p>
       <button
+        type="button"
         onClick={() => reset()}
-        className="px-4 py-2 bg-primary text-primary-foreground rounded-md font-medium"
+        className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium transition-opacity [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-90 cursor-pointer"
       >
         Coba Lagi
       </button>

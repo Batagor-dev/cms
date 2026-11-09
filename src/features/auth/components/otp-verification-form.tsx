@@ -137,30 +137,30 @@ export function OtpVerificationForm() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Animated Brand Logo Icon */}
-      <AnimatedBrandLogo size="md" className="mb-6" />
+      <AnimatedBrandLogo size="lg" className="mb-6" />
 
       {/* Header */}
       <div className="text-center mb-7">
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-2xl font-semibold tracking-tight leading-tight text-slate-900 dark:text-zinc-50">
           Enter verification code
         </h1>
-        <p className="text-xs text-slate-500 mt-1.5 max-w-xs">
+        <p className="text-sm text-slate-500 dark:text-zinc-400 mt-1.5 leading-normal max-w-sm">
           We sent a 6-digit code to{' '}
-          <span className="font-semibold text-slate-900">{email || 'your email'}</span>
+          <span className="font-semibold text-slate-900 dark:text-zinc-100">{email || 'your email'}</span>
         </p>
       </div>
 
       <div className="w-full space-y-5">
         {error && (
-          <div className="flex items-center gap-1.5 text-xs text-rose-500 font-normal">
-            <FaCircleExclamation className="size-3 text-rose-500 shrink-0" />
+          <div className="flex items-center gap-1.5 text-xs text-rose-500 dark:text-rose-400 font-normal">
+            <FaCircleExclamation className="size-3.5 shrink-0" />
             <span>{error}</span>
           </div>
         )}
 
         {successMessage && (
-          <div className="flex items-center gap-1.5 text-xs text-emerald-600 font-medium">
-            <FaCircleCheck className="size-3.5 text-emerald-600 shrink-0" />
+          <div className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+            <FaCircleCheck className="size-4 shrink-0" />
             <span>{successMessage}</span>
           </div>
         )}
@@ -176,17 +176,17 @@ export function OtpVerificationForm() {
 
         <div className="text-center">
           {resendCooldown > 0 ? (
-            <p className="text-xs text-slate-400">
-              Resend code in <span className="font-medium text-slate-700">{resendCooldown}s</span>
+            <p className="text-xs text-slate-500 dark:text-zinc-400">
+              Resend code in <span className="font-medium text-slate-700 dark:text-zinc-200 tabular-nums">{resendCooldown}s</span>
             </p>
           ) : (
             <button
               type="button"
               onClick={handleResend}
               disabled={isResending}
-              className="inline-flex items-center gap-1.5 text-xs text-slate-900 font-semibold hover:underline disabled:opacity-50 cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-xs text-slate-900 dark:text-zinc-100 font-semibold hover:underline disabled:opacity-50 cursor-pointer"
             >
-              <FaRotate className="size-3" />
+              <FaRotate className="size-3.5" />
               Resend verification code
             </button>
           )}
@@ -198,7 +198,7 @@ export function OtpVerificationForm() {
           disabled={otp.length !== 6 || isLoading}
           isLoading={isLoading}
           loadingText="Verifying..."
-          className="w-full h-11 rounded-xl bg-slate-950 text-white hover:bg-slate-900 text-sm font-medium shadow-sm transition-colors mt-2"
+          className="w-full h-11 rounded-xl bg-slate-950 dark:bg-white text-white dark:text-zinc-950 hover:bg-slate-900 dark:hover:bg-zinc-200 text-sm font-medium shadow-sm transition-colors mt-2"
         >
           Verify code
         </Button>
@@ -207,9 +207,9 @@ export function OtpVerificationForm() {
       <div className="mt-8 text-center">
         <Link
           href="/login"
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-zinc-400 [@media(hover:hover)_and_(pointer:fine)]:hover:text-slate-900 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-100 transition-colors"
         >
-          <FaArrowLeft className="size-3" /> Back to sign in
+          <FaArrowLeft className="size-3.5" /> Back to sign in
         </Link>
       </div>
     </div>

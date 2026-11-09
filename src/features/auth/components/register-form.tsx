@@ -106,14 +106,14 @@ export function RegisterForm() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Animated Brand Logo Icon */}
-      <AnimatedBrandLogo size="md" className="mb-6" />
+      <AnimatedBrandLogo size="lg" className="mb-6" />
 
       {/* Header */}
       <div className="text-center mb-7">
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-2xl font-semibold tracking-tight leading-tight text-slate-900 dark:text-zinc-50">
           Create an account
         </h1>
-        <p className="text-xs text-slate-500 mt-1.5">
+        <p className="text-sm text-slate-500 dark:text-zinc-400 mt-1.5 leading-normal max-w-prose">
           Sign up with your preferred provider or email
         </p>
       </div>
@@ -124,10 +124,10 @@ export function RegisterForm() {
           type="button"
           onClick={() => handleOAuth('google')}
           disabled={isLoading || socialLoading !== null}
-          className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-sm font-medium flex items-center justify-center relative transition-colors cursor-pointer shadow-xs disabled:opacity-60"
+          className="w-full h-11 px-3 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-slate-50 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-zinc-800/80 text-slate-800 dark:text-zinc-100 text-sm font-medium flex items-center justify-center relative transition-colors cursor-pointer shadow-xs disabled:opacity-60"
         >
-          <div className="absolute left-3 size-6 rounded-md bg-slate-950 text-white flex items-center justify-center">
-            <FaGoogle className="size-3 text-white" />
+          <div className="absolute left-2.5 size-7 rounded-lg bg-slate-950 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center">
+            <FaGoogle className="size-4" />
           </div>
           <span>{socialLoading === 'google' ? 'Connecting...' : 'Sign up with Google'}</span>
         </button>
@@ -136,10 +136,10 @@ export function RegisterForm() {
           type="button"
           onClick={() => handleOAuth('github')}
           disabled={isLoading || socialLoading !== null}
-          className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-sm font-medium flex items-center justify-center relative transition-colors cursor-pointer shadow-xs disabled:opacity-60"
+          className="w-full h-11 px-3 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-slate-50 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-zinc-800/80 text-slate-800 dark:text-zinc-100 text-sm font-medium flex items-center justify-center relative transition-colors cursor-pointer shadow-xs disabled:opacity-60"
         >
-          <div className="absolute left-3 size-6 rounded-md bg-slate-950 text-white flex items-center justify-center">
-            <FaGithub className="size-3.5 text-white" />
+          <div className="absolute left-2.5 size-7 rounded-lg bg-slate-950 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center">
+            <FaGithub className="size-4" />
           </div>
           <span>{socialLoading === 'github' ? 'Connecting...' : 'Sign up with GitHub'}</span>
         </button>
@@ -148,10 +148,10 @@ export function RegisterForm() {
       {/* OR Divider */}
       <div className="relative w-full my-6">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-slate-200" />
+          <div className="w-full border-t border-slate-200 dark:border-zinc-800" />
         </div>
-        <div className="relative flex justify-center text-[10px] uppercase">
-          <span className="bg-white px-3 text-slate-400 font-semibold tracking-wider">
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-white dark:bg-zinc-950 px-3 text-slate-500 dark:text-zinc-400 font-medium tracking-wide">
             OR
           </span>
         </div>
@@ -160,7 +160,7 @@ export function RegisterForm() {
       {/* Form */}
       <form onSubmit={handleSubmit} className="w-full space-y-3.5">
         <div className="space-y-1.5 text-left">
-          <label htmlFor="reg-name" className="block text-xs font-semibold text-slate-800">
+          <label htmlFor="reg-name" className="block text-sm font-medium text-slate-800 dark:text-zinc-200">
             Full Name
           </label>
           <input
@@ -171,12 +171,12 @@ export function RegisterForm() {
             required
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="w-full h-10 px-3.5 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-colors"
+            className="w-full h-10 px-3.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-base sm:text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 dark:focus:ring-white/20 focus:border-slate-900 dark:focus:border-zinc-500 transition-colors"
           />
         </div>
 
         <div className="space-y-1.5 text-left">
-          <label htmlFor="reg-email" className="block text-xs font-semibold text-slate-800">
+          <label htmlFor="reg-email" className="block text-sm font-medium text-slate-800 dark:text-zinc-200">
             Email
           </label>
           <input
@@ -187,12 +187,12 @@ export function RegisterForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full h-10 px-3.5 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-colors"
+            className="w-full h-10 px-3.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-base sm:text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 dark:focus:ring-white/20 focus:border-slate-900 dark:focus:border-zinc-500 transition-colors"
           />
         </div>
 
         <div className="space-y-1.5 text-left">
-          <label htmlFor="reg-password" className="block text-xs font-semibold text-slate-800">
+          <label htmlFor="reg-password" className="block text-sm font-medium text-slate-800 dark:text-zinc-200">
             Password
           </label>
           <div className="relative">
@@ -204,22 +204,22 @@ export function RegisterForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full h-10 pl-3.5 pr-11 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
+              className="w-full h-10 pl-3.5 pr-12 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-base sm:text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 dark:focus:ring-white/20 focus:border-slate-900 dark:focus:border-zinc-500 transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
             />
             <button
               type="button"
               tabIndex={-1}
               onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 size-8 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 active:bg-slate-200 cursor-pointer z-20 rounded-lg transition-colors focus:outline-none"
+              className="absolute right-1.5 top-1/2 -translate-y-1/2 size-9 flex items-center justify-center text-slate-500 dark:text-zinc-400 [@media(hover:hover)_and_(pointer:fine)]:hover:text-slate-700 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-100 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-slate-100 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-zinc-800 active:bg-slate-200 dark:active:bg-zinc-700 cursor-pointer z-20 rounded-lg transition-colors focus:outline-none"
               aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
-              {showPassword ? <FaEyeSlash className="size-4 text-slate-700" /> : <FaEye className="size-4 text-slate-400" />}
+              {showPassword ? <FaEyeSlash className="size-4.5 text-slate-700 dark:text-zinc-200" /> : <FaEye className="size-4.5 text-slate-500 dark:text-zinc-400" />}
             </button>
           </div>
         </div>
 
         <div className="space-y-1.5 text-left">
-          <label htmlFor="reg-confirm" className="block text-xs font-semibold text-slate-800">
+          <label htmlFor="reg-confirm" className="block text-sm font-medium text-slate-800 dark:text-zinc-200">
             Confirm Password
           </label>
           <div className="relative">
@@ -231,27 +231,27 @@ export function RegisterForm() {
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full h-10 pl-3.5 pr-11 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
+              className="w-full h-10 pl-3.5 pr-12 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-base sm:text-sm text-slate-900 dark:text-zinc-100 placeholder:text-slate-500 dark:placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 dark:focus:ring-white/20 focus:border-slate-900 dark:focus:border-zinc-500 transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
             />
             <button
               type="button"
               tabIndex={-1}
               onClick={() => setShowConfirmPassword((prev) => !prev)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 size-8 flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 active:bg-slate-200 cursor-pointer z-20 rounded-lg transition-colors focus:outline-none"
+              className="absolute right-1.5 top-1/2 -translate-y-1/2 size-9 flex items-center justify-center text-slate-500 dark:text-zinc-400 [@media(hover:hover)_and_(pointer:fine)]:hover:text-slate-700 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-100 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-slate-100 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:bg-zinc-800 active:bg-slate-200 dark:active:bg-zinc-700 cursor-pointer z-20 rounded-lg transition-colors focus:outline-none"
               aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
             >
               {showConfirmPassword ? (
-                <FaEyeSlash className="size-4 text-slate-700" />
+                <FaEyeSlash className="size-4.5 text-slate-700 dark:text-zinc-200" />
               ) : (
-                <FaEye className="size-4 text-slate-400" />
+                <FaEye className="size-4.5 text-slate-500 dark:text-zinc-400" />
               )}
             </button>
           </div>
         </div>
 
         {error && (
-          <div className="flex items-center gap-1.5 pt-1 text-xs text-rose-500 font-normal">
-            <FaCircleExclamation className="size-3 text-rose-500 shrink-0" />
+          <div className="flex items-center gap-1.5 pt-1 text-xs text-rose-500 dark:text-rose-400 font-normal">
+            <FaCircleExclamation className="size-3.5 shrink-0" />
             <span>{error}</span>
           </div>
         )}
@@ -260,7 +260,7 @@ export function RegisterForm() {
           type="submit"
           isLoading={isLoading}
           loadingText="Creating account..."
-          className="w-full h-11 rounded-xl bg-slate-950 text-white hover:bg-slate-900 text-sm font-medium shadow-sm transition-colors mt-3"
+          className="w-full h-11 rounded-xl bg-slate-950 dark:bg-white text-white dark:text-zinc-950 hover:bg-slate-900 dark:hover:bg-zinc-200 text-sm font-medium shadow-sm transition-colors mt-3"
         >
           Create account
         </Button>
@@ -269,9 +269,9 @@ export function RegisterForm() {
       <div className="mt-8 text-center">
         <Link
           href="/login"
-          className="text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
+          className="text-xs font-medium text-slate-600 dark:text-zinc-400 [@media(hover:hover)_and_(pointer:fine)]:hover:text-slate-900 dark:[@media(hover:hover)_and_(pointer:fine)]:hover:text-zinc-100 transition-colors"
         >
-          Already have an account? <span className="text-slate-950 font-semibold underline">Sign in</span>
+          Already have an account? <span className="text-slate-950 dark:text-zinc-50 font-semibold underline">Sign in</span>
         </Link>
       </div>
     </div>
