@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { AuthFormSkeleton } from '@/components/ui/skeleton'
 import { OtpVerificationForm } from '@/features/auth/components'
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function VerifyOtpPage() {
   return (
-    <Suspense fallback={<div className="p-8 text-center text-sm text-muted-foreground">Memuat form verifikasi...</div>}>
+    <Suspense fallback={<AuthFormSkeleton variant="otp" />}>
       <OtpVerificationForm />
     </Suspense>
   )

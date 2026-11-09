@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { AuthFormSkeleton } from '@/components/ui/skeleton'
 import { LoginForm } from '@/features/auth/components'
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="p-8 text-center text-sm text-muted-foreground">Memuat form login...</div>}>
+    <Suspense fallback={<AuthFormSkeleton variant="login" />}>
       <LoginForm />
     </Suspense>
   )
